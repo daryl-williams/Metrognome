@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta  name = "viewport" content = "width=device-width, initial-scale=1" />
+  <meta  name="description" content="Metrognome is a playground for learning Tone.js" />
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <title>
+    Metrognome
+  </title>
+</head>
+
+<body>
+  <div id="metronome-container">
+    <header id="metronome-header">
+      <div id="metronome-title">Metrognome</div>
+    </header>
+
+    <div id="metronome-controls">
+      <form  action="" method="get" class="metronome-info-form">
+        <div>
+          <label for="number-of-measures">Number of Measures </label>
+          <input type="number" name="number-of-measures" id="number-of-measures">
+					<span class="error-reason" id="number-of-measures.error-reason"></span>
+        </div>
+
+        <div>
+          <label for="time-signature">Time Signature</label>
+            <select size="1" data-type="header" required name="time_signature" id="time-signature">
+              <option value="" disabled>select time signature</option>
+              <option>3/4</option>
+              <option selected>4/4</option>
+            </select>
+        </div>
+
+        <div>
+          <label for="metronome-sound-select">Sounds</label>
+          <select id="metronome-sound-select">
+            <optgroup label="Synths">
+              <option>Piano</option>
+              <option>Chimes</option>
+              <option>Cymbal</option>
+              <option>Kick</option>
+              <option>Steelpan</option>
+              <option>TomTom</option>
+            </optgroup>
+            <optgroup label="Samples">
+              <option>Click</option>
+              <option>Bell</option>
+              <option>Banjo</option>
+              <option>Woodblock</option>
+            </optgroup>
+          </select>
+        </div>
+
+         <div>
+          <label for="beats-per-minute">Beats Per Minute</label>
+					<span id="bpm-output"></span>
+          <input type="range" min="10" max="300" step="10" value="120" class="slider" id="beats-per-minute" name="bpm-range" data-orientation="vertical" >
+        </div>
+
+        <div class="metronome-startstop-div">
+          <label for="metronome-stopstart-button"></label>
+          <button id="metronome-startstop-button">Start</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="metronome-measures-grid"></div>
+
+    <footer id="metronome-footer">
+      This is the footer
+    </footer>
+  </div>
+
+  <script src="/js/lib/Tone.js/14.7.37/Tone.js"></script>
+  <script src="/js/lib/teoria.js"></script>
+  <script src="/js/lib/raphael.js"></script>
+  <script src="/js/lib/raphael.chord.js"></script>
+  <script src="/js/index.js" type="module"></script>
+</body>
+</html>
+
