@@ -1,0 +1,128 @@
+/**
+ * metrognome.css
+ */
+
+/*
+ * DPW: Figure out if we should use this:
+ *
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+*/
+
+html, body {
+  height: 100vh;
+  min-height: 100vh;
+  font-family: 'Open Sans', 'sans-serif';
+  font-size: 12pt;
+  color: #444;
+  background-color: #fff;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  overflow: hidden;
+  user-select: none;
+}
+
+label {
+  display: inline-block;
+  width: 9em;
+}
+
+.error-reason {
+  color: red;
+}
+
+#metronome-container {
+  display: block;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+#metronome-header {
+  text-align: center;
+  background-color: #d3e3fe;
+}
+
+#metronome-controls {
+  width: 100%;
+  padding: 1em;
+}
+
+#metronome-measures {
+  border: thin solid #ddd;
+}
+
+#metronome-footer {
+  text-align: center;
+  background-color: #d4e4fd;
+  border-top: thin solid #000;
+  display: none;
+}
+
+.metronome-startstop-div {
+  margin-top: 2em;
+}
+
+#metronome-measures-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1in);
+  grid-gap: 5px;
+  justify-content: center;
+}
+
+.measure {
+  border: thin solid #ccc;
+}
+
+.current-measure {
+  border: thin solid green;
+}
+
+.measure-common-time {
+}
+
+.measure-three_quarter-time {
+}
+
+.beat {
+  display: inline-block;
+  text-align: center;
+  width:  25%;
+  height: .5in;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: thin solid #ddd;
+}
+
+.current-beat {
+  background-color: #d3e3fe;
+}
+
+.beat-1 {
+  background-color: #fff;
+}
+
+.beat-2 {
+  background-color: red;
+}
+
+.beat-3 {
+  background-color: green;
+}
+
+.beat-4 {
+  background-color: blue;
+}
+
+.beat-common-time {
+  width: 25%;
+}
+
+.beat-3qt-time {
+  width: 33%;
+}
+.beat-3qt1-time {
+  width: 34%;
+}
+
