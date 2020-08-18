@@ -40,5 +40,5 @@ To get the Node server running locally:
 - Figure out how to sync beat highliting and beat sound.
 - Figure out how to get sound samples working.
 - Figure out how to use volume to accent downbeat.
-- Much more
+- Much more to come...
 
