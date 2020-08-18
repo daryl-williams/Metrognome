@@ -42,3 +42,5 @@ To get the Node server running locally:
 - Figure out how to use volume to accent downbeat.
 - Much more to come...
 
+# DESCRIBE Metrobnome Object Class
+
