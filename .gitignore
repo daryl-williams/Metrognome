@@ -9,3 +9,4 @@ node_modules/
 copyright.txt
 Makefile
 Makefile-
+build.sh
