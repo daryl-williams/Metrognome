@@ -1,15 +1,16 @@
 # Metrognome
 
-Metrognome is a node.js app is a playground for me to learn how to work
-with the Tone.js Web Audio framework.
+Metrognome is meant to be a playground for me to learn how to work
+with the Tone.js Web Audio framework, and is a work in progress.
 
-To that end I building a simple (to begin) metronome using Tone.js.
-The intended purpose being to display a grid of user defined measures
-and beats that get highlighted as the metronome plays the designated
-beats. The app features will include user input for the number of
-measures, the sime signature and the beats per minute. Additionally
-the user should be able to select the sound source to be either a
-note sample from an external file or a synth instrument. 
+The app uses the Tone.js library to build a simple metronome that
+accepts user input to set the number of measures, the sime signature
+and the number of beats per minute. The user input is then used to
+display a grid consisting of the defined measures and beats which
+get highlighted as the metronome plays the designated beats.
+
+Additionally the user should be able to select the sound source from
+from a menu that can include external sample files or a synth instrument. 
 
 Now I confess that despite the many excellent examples and demos
 I am still having a hard time figureing out how to do some of these
