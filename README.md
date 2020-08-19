@@ -63,6 +63,7 @@ http server for the front end. The skeltal directory structure:
 - /server/app.js         # Server application entry point.
 - /server/routes         # Server application routes.
 
+```javascript
   Metrognome/
   ├── README.md
   ├── client
@@ -88,4 +89,5 @@ http server for the front end. The skeltal directory structure:
   ├── package.json
   └── server
       └── app.js
+```
 
