@@ -29,21 +29,6 @@ To get the Node server running locally:
 
 ## Application Structure
 
-- `index.js`      - The entry point to our application.
-- `client/`       - This folder contains the app's front end code.
-- `client/js`     - This folder contains the app's front end javascript code.
-- `client/js/metronome` - This folder contains the Metronome object code.
-- `server/app.js` - This file requires the routes we'll be using in the application.
-
-The Metrognome app is a Node.js/Express application and is expressed as a JavaScript
-class based object with start, play and stop public methods. While most of the code
-is currently client-side code, there is a small server app waiting for another time.
-The Metrognome itself is mostly client side based.
-
-The project's directory structure is a purely arbitrary self-describing directory
-structure representing the client/server parts of the application with the Node/Express
-http server for the front end. The skeltal directory structure:
-
 ```
   Metrognome/
   ├── README.md
@@ -72,12 +57,25 @@ http server for the front end. The skeltal directory structure:
       └── app.js
 ```
 
+- `index.js`      - The entry point to our application.
+- `client/`       - This folder contains the app's front end code.
+- `client/js`     - This folder contains the app's front end javascript code.
+- `client/js/metronome` - This folder contains the Metronome object code.
+- `server/app.js` - This file requires the routes we'll be using in the application.
+
+The Metrognome app is a Node.js/Express application and is expressed as a JavaScript
+class based object with start, play and stop public methods. While most of the code
+is currently client-side code, there is a small server app waiting for another time.
+The Metrognome itself is mostly client side based.
+
+The project's directory structure is a purely arbitrary self-describing directory
+structure representing the client/server parts of the application with the Node/Express
+http server for the front end. The skeltal directory structure:
+
 ## TODO
 
 - Figure out how to sync beat highliting and beat sound.
 - Figure out how to get sound samples working.
 - Figure out how to use volume to accent downbeat.
 - Much more to come...
-
-## Describe Metrognome Object Class
 
