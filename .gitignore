@@ -1,0 +1,12 @@
+.env
+*~
+*.bak
+*.swp
+*wip*
+tmp/
+.Attic/
+node_modules/
+copyright.txt
+Makefile
+Makefile-
+build.sh

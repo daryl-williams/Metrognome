@@ -1,19 +1,23 @@
 # Metrognome
 
-Metrognome is a node.js app is a playground for me to learn how to work
-with the Tone.js Web Audio framework.
+Metrognome is meant to be a playground for me to learn how to work
+with the Tone.js Web Audio framework, and is a work in progress.
 
-To that end I building a simple (to begin) metronome using Tone.js.
-The intended purpose being to display a grid of user defined measures
-and beats that get highlighted as the metronome plays the designated
-beats. The app features will include user input for the number of
-measures, the sime signature and the beats per minute. Additionally
-the user should be able to select the sound source to be either a
-note sample from an external file or a synth instrument. 
+The app uses the Tone.js library to build a simple metronome that
+accepts user input to set the number of measures, the sime signature
+and the number of beats per minute. The user input is then used to
+display a grid consisting of the defined measures and beats which
+get highlighted as the metronome plays the designated beats.
+
+Additionally the user should be able to select the sound source from
+from a menu that can include external sample files or a synth instrument. 
+>>>>>>> staging
 
 Now I confess that despite the many excellent examples and demos
 I am still having a hard time figureing out how to do some of these
 things with Tone.js
+
+![Metrognome Scrrenshot](/images/metrognome-screenshot.png)
 
 ## Getting Started
 
@@ -29,16 +33,44 @@ To get the Node server running locally:
 
 ## Application Structure
 
+```
+  Metrognome/
+  ├── README.md
+  ├── client
+  │   ├── css
+  │   ├── favicon.ico
+  │   ├── index.html
+  │   └── js
+  │       ├── events
+  │       ├── index.js
+  │       ├── lib
+  │       └── metronome
+  │           ├── apply-event-updates.js
+  │           ├── index.js
+  │           ├── makegrid.js
+  │           ├── play.js
+  │           ├── samples
+  │           ├── sequence-parser.js
+  │           ├── start.js
+  │           ├── stop.js
+  │           └── synths
+  ├── index.js
+  ├── package-lock.json
+  ├── package.json
+  └── server
+      └── app.js
+```
+
 - `index.js`      - The entry point to our application.
 - `client/`       - This folder contains the app's front end code.
 - `client/js`     - This folder contains the app's front end javascript code.
 - `client/js/metronome` - This folder contains the Metronome object code.
 - `server/app.js` - This file requires the routes we'll be using in the application.
 
-# TODO
+## TODO
 
 - Figure out how to sync beat highliting and beat sound.
 - Figure out how to get sound samples working.
 - Figure out how to use volume to accent downbeat.
-- Much more
+- Much more to come...
 
