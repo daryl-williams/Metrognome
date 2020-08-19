@@ -74,7 +74,7 @@ The project's directory structure is a purely arbitrary self-describing director
 structure representing the client/server parts of the application with the Node/Express
 http server for the front end. The skeltal directory structure:
 
-## TODO
+## STILL TODO
 
 - Figure out how to sync beat highliting and beat sound.
 - Figure out how to get sound samples working.
