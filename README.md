@@ -44,3 +44,22 @@ To get the Node server running locally:
 
 # Describe Metrognome Object Class
 
+The Metrognome app is a Node.js/Express application and is expressed as a JavaScript
+class based object with start, play and stop public methods. While most of the code
+is currently client-side code, there is a small server app waiting for another time.
+The Metrognome itself is mostly client side based.
+
+The project's directory structure is a purely arbitrary self-describing directory
+structure representing the client/server parts of the application with the Node/Express
+http server for the front end. The skeltal directory structure:
+
+/index.js              # HTTP Server and application entry
+/client/               # Start of client directories, i.e. the app's DocumentRoot
+/client/js/index.js    # Initial setup and event registration.
+/client/js/events/     # User events handlers.
+/client/js/metronome/  # Metronome object project directory.
+/client/js/lib/        # Open source utility libraries Tone.js, etc.
+/server/               # Start of server side directories.
+/server/app.js         # Server application entry point.
+/server/routes         # Server application routes.
+
