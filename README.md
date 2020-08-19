@@ -64,6 +64,8 @@ To get the Node server running locally:
 - `client/`       - This folder contains the app's front end code.
 - `client/js`     - This folder contains the app's front end javascript code.
 - `client/js/metronome` - This folder contains the Metronome object code.
+- `client/js/metronome/synths` - This folder contains the synth descrition files.
+- `client/js/metronome/samples` - This folder contains the sample files.
 - `server/app.js` - This file requires the routes we'll be using in the application.
 
 The Metrognome app is a Node.js/Express application and is expressed as a JavaScript
