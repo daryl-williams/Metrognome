@@ -35,15 +35,6 @@ To get the Node server running locally:
 - `client/js/metronome` - This folder contains the Metronome object code.
 - `server/app.js` - This file requires the routes we'll be using in the application.
 
-## TODO
-
-- Figure out how to sync beat highliting and beat sound.
-- Figure out how to get sound samples working.
-- Figure out how to use volume to accent downbeat.
-- Much more to come...
-
-## Describe Metrognome Object Class
-
 The Metrognome app is a Node.js/Express application and is expressed as a JavaScript
 class based object with start, play and stop public methods. While most of the code
 is currently client-side code, there is a small server app waiting for another time.
@@ -53,7 +44,7 @@ The project's directory structure is a purely arbitrary self-describing director
 structure representing the client/server parts of the application with the Node/Express
 http server for the front end. The skeltal directory structure:
 
-```javascript
+```
   Metrognome/
   ├── README.md
   ├── client
@@ -80,4 +71,13 @@ http server for the front end. The skeltal directory structure:
   └── server
       └── app.js
 ```
+
+## TODO
+
+- Figure out how to sync beat highliting and beat sound.
+- Figure out how to get sound samples working.
+- Figure out how to use volume to accent downbeat.
+- Much more to come...
+
+## Describe Metrognome Object Class
 
