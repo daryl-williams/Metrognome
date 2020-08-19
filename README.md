@@ -11,7 +11,6 @@ get highlighted as the metronome plays the designated beats.
 
 Additionally the user should be able to select the sound source from
 from a menu that can include external sample files or a synth instrument. 
->>>>>>> staging
 
 Now I confess that despite the many excellent examples and demos
 I am still having a hard time figureing out how to do some of these
