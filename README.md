@@ -15,6 +15,8 @@ Now I confess that despite the many excellent examples and demos
 I am still having a hard time figureing out how to do some of these
 things with Tone.js
 
+![Metrognome Scrrenshot](/images/metrognome-screenshot.png)
+
 ## Getting Started
 
 These instructions will get a copy of the project up and running on your
