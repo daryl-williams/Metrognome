@@ -67,6 +67,17 @@ To get the Node server running locally:
 - `server/app.js` - This file requires the routes we'll be using in the application.
 
 ## TODO
+=======
+The Metrognome app is a Node.js/Express application and is expressed as a JavaScript
+class based object with start, play and stop public methods. While most of the code
+is currently client-side code, there is a small server app waiting for another time.
+The Metrognome itself is mostly client side based.
+
+The project's directory structure is a purely arbitrary self-describing directory
+structure representing the client/server parts of the application with the Node/Express
+http server for the front end. The skeltal directory structure:
+
+## STILL TODO
 
 - Figure out how to sync beat highliting and beat sound.
 - Figure out how to get sound samples working.
