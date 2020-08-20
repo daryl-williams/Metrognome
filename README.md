@@ -1,7 +1,7 @@
 # Metrognome
 
-Metrognome is a node.js app playground to learn how to work with
-the Tone.js Web Audio framework.
+Metrognome is a node.js app that's meant to be a playground where we can
+learn how to program to and work with the Tone.js Web Audio framework.
 
 To that end I building a simple metronome using Tone.js. The
 intended purpose being to display a grid of user defined measures
