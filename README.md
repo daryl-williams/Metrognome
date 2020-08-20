@@ -63,7 +63,7 @@ To get the Node server running locally:
 - `index.js`      - The entry point to our application.
 - `client/`       - This folder contains the app's front end code.
 - `client/js`     - This folder contains the app's front end javascript code.
-- `client/js/metronome` - This folder contains the Metronome object code.
+- `client/js/metronome` - This folder contains the Metronome object's class code.
 - `client/js/metronome/synths` - This folder contains the synth descrition files.
 - `client/js/metronome/samples` - This folder contains the sample files.
 - `server/app.js` - This file requires the routes we'll be using in the application.
