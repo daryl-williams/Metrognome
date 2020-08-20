@@ -12,8 +12,12 @@ the user should be able to select the sound source to be either a
 note sample from an external file or a synth instrument. 
 
 Now I confess that despite the many excellent examples and demos
-I am still having a hard time figureing out how to do some of these
-things with Tone.js
+I am still having a hard time figuring out how to do some things
+with Tone.js, for example I'm trying sync the beat with a DOM update
+using Tone.Draw.schedule() but if you look the beat highlights are
+out of sync with the sound of the beat. There are other issues as well,
+so anyone with this kind of experience that wants to help, it would
+be much appreciated.
 
 ![Metrognome Scrrenshot](/images/metrognome-screenshot.png)
 
