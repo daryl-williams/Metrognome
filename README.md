@@ -1,16 +1,15 @@
 # Metrognome
 
-Metrognome is meant to be a playground for me to learn how to work
-with the Tone.js Web Audio framework, and is a work in progress.
+Metrognome is a node.js app meant to be playground to learn
+how to work with the Tone.js Web Audio framework.
 
-The app uses the Tone.js library to build a simple metronome that
-accepts user input to set the number of measures, the sime signature
-and the number of beats per minute. The user input is then used to
-display a grid consisting of the defined measures and beats which
-get highlighted as the metronome plays the designated beats.
-
-Additionally the user should be able to select the sound source from
-from a menu that can include external sample files or a synth instrument. 
+To that end I building a simple metronome using Tone.js. The
+intended purpose being to display a grid of user defined measures
+and beats that get highlighted as the metronome plays the designated
+beats. The app features will include user input for the number of
+measures, the sime signature and the beats per minute. Additionally
+the user should be able to select the sound source to be either a
+note sample from an external file or a synth instrument. 
 
 Now I confess that despite the many excellent examples and demos
 I am still having a hard time figureing out how to do some of these
@@ -63,8 +62,8 @@ To get the Node server running locally:
 - `index.js`      - The entry point to our application.
 - `client/`       - This folder contains the app's front end code.
 - `client/js`     - This folder contains the app's front end javascript code.
-- `client/js/metronome` - This folder contains the Metronome object code.
-- `client/js/metronome/synths` - This folder contains the synth descrition files.
+- `client/js/metronome` - This folder contains the Metronome object's class code.
+- `client/js/metronome/synths` - This folder contains the synth description files.
 - `client/js/metronome/samples` - This folder contains the sample files.
 - `server/app.js` - This file requires the routes we'll be using in the application.
 
