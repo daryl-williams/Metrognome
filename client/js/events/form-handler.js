@@ -79,7 +79,7 @@ export function formHandler(event) {
               //}
             }
           }
-          //console.log('metronome:/client/js/events/form-handler.js: sequence =', sequence);
+          console.log('metronome:/client/js/events/form-handler.js: sequence =', sequence);
           metronome.makeGrid(sequence);
 
           let obj = {
