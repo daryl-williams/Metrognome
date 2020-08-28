@@ -1,29 +1,10 @@
 /**
- * Metronome
- *
- * metronome:/client/js/metronome/apply-event-updates.js
- *
- * Copyright (C) 2020 Daryl P. Williams
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
-
-/**
- * The code below was taken from an online article by Nicolò Andronio
+ * The code below comes from an online article by Nicolò Andronio
  * titled "Easily play a song track in JavaScript using Tone.js Transport"
  * and avaiable at:
+ *
  * https://www.andronio.me/2019/04/24/easily-play-a-song-track-in-javascript-using-tone-js-transport/
+ *
  * The code snippets from that article are published under the MIT License.
  */
 

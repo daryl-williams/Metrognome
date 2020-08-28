@@ -21,7 +21,7 @@
 
 'use strict';
 
-import { SequenceParser } from './sequence-parser.js';
+import { SequenceParser } from './player/sequence-parser.js';
 
 export function start(obj) {
   console.log('metronome:/client/js/metronome/start.js:start(): start obj =', obj);
@@ -37,8 +37,8 @@ export function start(obj) {
   this.buffer.click = new Tone.Buffer(this.samples.click);
   this.buffer.woodblock = new Tone.Buffer(this.samples.woodblock);
 
-  this.player = new Tone.Player(this.buffer.banjo).toDestination();
-  this.player.debug = true;
+//  this.player = new Tone.Player(this.buffer.banjo).toDestination();
+//  this.player.debug = true;
 
   //let sound_file = './sounds/' + document.getElementById('metronome-sound-select').value.toLowerCase() + '.mp3';
   //let sound_file = './samples/' + obj.instrument.name.toLowerCase() + '.mp3';
@@ -66,8 +66,25 @@ export function start(obj) {
   }
   console.log('metronome:/client/js/metronome/start.js:start(): new_sequence =', new_sequence);
 
-  const sequenceParser = new SequenceParser(obj.bpm, time_signature_array);
-  this.play(sequenceParser.parse(new_sequence));
+  //const sequenceParser = new SequenceParser(obj.bpm, time_signature_array);
+  //this.play(sequenceParser.parse(new_sequence));
+
+  const sequence = [
+    'rest/4 B4/16   A4/16   G#4/16  A4/16',
+    'C5/8   rest/8  D5/16   C5/16   B4/16 C5/16',
+    'E5/8   rest/8  F5/16   E5/16   D#5/16 E5/16',
+    'B5/16  A5/16   G#5/16  A5/16   B5/16 A5/16 G#5/16 A5/16',
+    'C6/4   A5/8    C6/8',
+    'B5/8   A5/8    G5/8    A5/8',
+    'B5/8   A5/8    G5/8    A5/8',
+    'B5/8   A5/8    G5/8    F#5/8',
+    'E5/4'
+  ];
+
+  this.number_of_measures = sequence.length;
+
+  const sequenceParser = new SequenceParser(128, [2, 4]);
+  this.player.play(sequenceParser.parse(sequence));
 }
 
 // eof
