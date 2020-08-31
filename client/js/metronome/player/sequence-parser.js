@@ -12,6 +12,7 @@ class SequenceParser {
     constructor (tempoBpm, timeSignatureArray) {
         this.initialTempo = { value: tempoBpm, unit: 'bpm' };
         this.initialTimeSignature = { numerator: timeSignatureArray[0], denominator: timeSignatureArray[1] };
+        this.measureCounter = 0;
     }
 
     parse (textMeasures) {
@@ -26,6 +27,9 @@ class SequenceParser {
                 event.newTimeSignature = this.initialTimeSignature;
                 firstEvent = false;
             }
+
+            event.measureNumber = this.measureCounter + 1;
+            this.measureCounter++;
 
             event.measure = this.parseTextMeasure(textMeasure);
             result.push(event);

@@ -11,6 +11,7 @@
 'use strict';
 
 const SequenceEvent = {
+  measureNumber: 0,
   measure: {
     notes: [{
       type: 'rest' | 'note',

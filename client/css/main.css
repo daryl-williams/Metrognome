@@ -79,11 +79,15 @@ label {
   border: thin solid green;
 }
 
+.measure-double-time {
+  background-color:pink;
+}
+.measure-3qt-time {
+}
+
 .measure-common-time {
 }
 
-.measure-three_quarter-time {
-}
 
 .beat {
   display: inline-block;
@@ -115,12 +119,16 @@ label {
   background-color: blue;
 }
 
-.beat-common-time {
-  width: 25%;
+.beat-double-time {
+  width: 50%;
 }
 
 .beat-3qt-time {
   width: 33%;
+}
+
+.beat-common-time {
+  width: 25%;
 }
 .beat-3qt1-time {
   width: 34%;

@@ -33,38 +33,45 @@ export function makeGrid(sequence) {
 
     let song_grid = document.getElementById('metronome-measures-grid');
 
-    let number_of_measures = sequence.length;
-    //console.log('metronome:/client/js/metronome/makegrid.js: number_of_measures =', number_of_measures);
+//    let number_of_measures = sequence.length;
+//    console.log('metronome:/client/js/metronome/makegrid.js: number_of_measures =', number_of_measures);
 
-    let time_signature = metronome.time_signature;
-    console.log('metronome:/client/js/metronome/makegrid.js: time_signature =', time_signature);
+//    let time_signature = metronome.sequence.timeSignature;
+//    console.log('metronome:/client/js/metronome/makegrid.js: time_signature =', time_signature);
 
-    for (let measure=0; measure<sequence.length; measure++) {
-      //console.log('metronome:/client/js/metronome/makegrid.js: sequence['+measure+'] =', sequence[measure]);
+    for (let measure_ndx=0; measure_ndx<metronome.sequence.numberOfMeasures; measure_ndx++) {
+      //console.log('metronome:/client/js/metronome/makegrid.js: sequence['+measure_ndx+'] =', sequence[measure_ndx]);
 
-      let measure_number = parseInt(measure, 10) + 1;
+      let measure_number = parseInt(measure_ndx, 10) + 1;
       let measure_container = document.createElement('div');
       measure_container.id = 'measure-' + measure_number;
       measure_container.className = 'measure';
       measure_container.setAttribute('data-type', 'measure');
 
-      let number_of_beats = parseInt(sequence[measure].length, 10);
+      //let number_of_beats = parseInt(metronome.sequence.measureBeats[measure_ndx]);
+      let number_of_beats = parseInt(metronome.sequence.measureBeats[0]);
       //console.log('metronome:/client/js/metronome/makegrid.js: number_of_beats =', number_of_beats);
 
-      if (number_of_beats === 4) {
+      if (number_of_beats === 1) {
         measure_container.className += " measure-common-time";
       }
+      else if (number_of_beats === 2) {
+        measure_container.className += " measure-double-time";
+      }
       else if (number_of_beats === 3) {
-        measure_container.className += " measure-three_quarter-time";
+        measure_container.className += " measure-3qt-time";
+      }
+      else if (number_of_beats === 4) {
+        measure_container.className += " measure-common-time";
       }
       else {
-        console.log('metronome:/client/js/metronome/makegrid.js: ERROR unsupported time signature =', metronome.time_signature);
+        console.log('metronome:/client/js/metronome/makegrid.js: ERROR unsupported time signature =', metronome.timeSignature);
       }
 
       song_grid.appendChild(measure_container);
 
       for (let beat=0; beat<number_of_beats; beat++) {
-        let beat_value = sequence[measure][beat][0].beat;
+        let beat_value = sequence[measure_ndx][beat][0].beat;
         //console.log('metronome:/client/js/metronome/makegrid.js: beat['+beat+'] =', beat_value);
         let beat_number = parseInt(beat, 10) + 1;
         //console.log('metronome:/client/js/metronome/makegrid.js: beat_number =', beat_number);
@@ -75,11 +82,14 @@ export function makeGrid(sequence) {
         beat_div.className = 'beat measure' + measure_number + '-beat' + beat_number;
         beat_div.innerHTML = beat_number;
 
-        if (time_signature == '4/4') {
-          beat_div.classList.add('beat-common-time');
+        if (metronome.sequence.timeSignature == '2/4') {
+          beat_div.classList.add('beat-double-time');
         }
-        else if (time_signature == '3/4') {
+        else if (metronome.sequence.timeSignature == '3/4') {
           beat_div.classList.add('beat-3qt-time');
+        }
+        else if (metronome.sequence.timeSignature == '4/4') {
+          beat_div.classList.add('beat-common-time');
         }
 //if (beat === 1) {
 //  beat_div.classList.remove('beat-3qt-time');
