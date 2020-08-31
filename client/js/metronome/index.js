@@ -40,6 +40,14 @@ class Metronome {
   gain;
   synth;
   buffer;
+  sequence = {
+    value: [],
+    timeSignature: '4/4',
+    beatsPerMinute: 0,
+    numberOfMeasures: 0,
+    soundFile: '',
+    currentBuffer: '',
+  };
   samples = {
     bell:      '/samples/bell.mp3',
     banjo:     '/samples/banjo.mp3',
@@ -55,22 +63,21 @@ class Metronome {
     tomtom,
     steelpan,
   };
-  sound_file = '';
-  current_buffer = '';
   instrument = {
     type: 'synths',
     name: 'kick',
   };
+
   makeGrid = makeGrid;
 
   constructor() {
-    //console.log('metronome:/client/js/metronome/index.js:Metrognome:constructor(): this =', this);
     this.buffer = {};
     this.play = play;
     this.player = player;
     this.start = start;
     this.stop = stop;
     this.applyEventUpdates = applyEventUpdates;
+    //console.log('metronome:/client/js/metronome/index.js:Metrognome:constructor(): this =', this);
   }
 }
 

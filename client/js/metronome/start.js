@@ -21,21 +21,22 @@
 
 'use strict';
 
+//import { metronome } from './index.js';
 import { SequenceParser } from './player/sequence-parser.js';
 
-export function start(obj) {
-  console.log('metronome:/client/js/metronome/start.js:start(): start obj =', obj);
+export function start() {
+  console.log('metronome:/client/js/metronome/start.js:start(): metronome.sequence =', this.sequence);
 
-  this.gain = new Tone.Gain(0.5);
+  this.sequence.gain = new Tone.Gain(0.5);
 
-  this.synth = new Tone.Synth().toDestination();
-  this.synth.chain(this.gain);
-  this.synth.volume.value = -10;
+//  this.synth = new Tone.Synth().toDestination();
+//  this.synth.chain(this.gain);
+//  this.synth.volume.value = -10;
 
-  this.buffer.bell =  new Tone.Buffer(this.samples.bell);
-  this.buffer.banjo = new Tone.Buffer(this.samples.banjo);
-  this.buffer.click = new Tone.Buffer(this.samples.click);
-  this.buffer.woodblock = new Tone.Buffer(this.samples.woodblock);
+//  this.buffer.bell =  new Tone.Buffer(this.samples.bell);
+//  this.buffer.banjo = new Tone.Buffer(this.samples.banjo);
+//  this.buffer.click = new Tone.Buffer(this.samples.click);
+//  this.buffer.woodblock = new Tone.Buffer(this.samples.woodblock);
 
 //  this.player = new Tone.Player(this.buffer.banjo).toDestination();
 //  this.player.debug = true;
@@ -45,46 +46,35 @@ export function start(obj) {
   //console.log('metronome:/client/js/metronome/start.js:start(): SOUND_FILE =', sound_file);
 
 //Tone.Transport.bpm.value = obj.bpm;;
-  console.log('metronome:/client/js/metronome/start.js:start(): BPM =', obj.bpm);
+  console.log('metronome:/client/js/metronome/start.js:start(): BPM =', this.sequence.beatsPerMinute);
 
-  let time_signature = obj.time_signature;
-  let time_signature_array = obj.time_signature.split('/');
+  let time_signature = (this.sequence.timeSignature) ? this.sequence.timeSignature : '4/4';
+  let time_signature_array = time_signature.split('/');
   console.log('metronome:/client/js/metronome/start.js:start(): time_signature_array =', time_signature_array);
 
-  let new_sequence = [];
-
-  for (let m=0, len=obj.sequence.length; m<len; ++m) {
-    //console.log('metronome:/client/js/metronome/start.js:start(): BEAT LEN =', song.body[m].length);
-    let measure = "";
-    for (let beat=0, blen=obj.time_signature_array[0]; beat<blen; ++beat) {
-      measure += obj.sequence[m][beat] =  'C4/' + 4 + ' ';
-      //console.log('metronome:/client/js/metronome/start.js:start(): BEAT =', beat);
-    }
-    measure = measure.trim();
-    //console.log('metronome:/client/js/metronome/start.js:start(): MEASURE =', measure);
-    new_sequence.push(measure);
-  }
-  console.log('metronome:/client/js/metronome/start.js:start(): new_sequence =', new_sequence);
-
-  //const sequenceParser = new SequenceParser(obj.bpm, time_signature_array);
-  //this.play(sequenceParser.parse(new_sequence));
-
-  const sequence = [
-    'rest/4 B4/16   A4/16   G#4/16  A4/16',
-    'C5/8   rest/8  D5/16   C5/16   B4/16 C5/16',
-    'E5/8   rest/8  F5/16   E5/16   D#5/16 E5/16',
-    'B5/16  A5/16   G#5/16  A5/16   B5/16 A5/16 G#5/16 A5/16',
-    'C6/4   A5/8    C6/8',
-    'B5/8   A5/8    G5/8    A5/8',
-    'B5/8   A5/8    G5/8    A5/8',
-    'B5/8   A5/8    G5/8    F#5/8',
-    'E5/4'
-  ];
-
-  this.number_of_measures = sequence.length;
-
-  const sequenceParser = new SequenceParser(128, [2, 4]);
-  this.player.play(sequenceParser.parse(sequence));
+//  let new_sequence = [];
+//  if (this.sequenceType === 'tune-sequence') {
+    //const sequenceParser = new SequenceParser(128, [2, 4]);
+    const sequenceParser = new SequenceParser(this.sequence.beatsPerMinute, this.sequence.timeSignatureArray);
+    this.player.play(sequenceParser.parse(this.sequence.value));
+//  }
+//  else if (this.sequenceType === 'beat-sequence') {
+//    for (let m=0, len=this.sequence.value.length; m<len; ++m) {
+//      let measure = "";
+//      for (let beat=0, blen=this.sequence.timeSignatureArray[0]; beat<blen; ++beat) {
+//        measure += this.sequence.value[m][beat] =  'C4/' + 4 + ' ';
+//        //console.log('metronome:/client/js/metronome/start.js:start(): BEAT =', beat);
+//      }
+//      measure = measure.trim();
+//      //console.log('metronome:/client/js/metronome/start.js:start(): MEASURE =', measure);
+//      new_sequence.push(measure);
+//    }
+//    console.log('metronome:/client/js/metronome/start.js:start(): new_sequence =', new_sequence);
+//    //const sequenceParser = new SequenceParser(obj.bpm, time_signature_array);
+//    //this.play(sequenceParser.parse(new_sequence));
+//  }
+//  else {
+//  }
 }
 
 // eof
