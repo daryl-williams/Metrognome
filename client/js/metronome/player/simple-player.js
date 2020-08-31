@@ -10,6 +10,7 @@
 
 'use strict';
 
+import { dom } from './dom.js';
 import { applyEventUpdates } from './apply-event-updates.js';
 
 class SimplePlayer {
@@ -69,13 +70,17 @@ class SimplePlayer {
 
           // This is used to delay notes that come next by the correct amount
           relativeTime += Tone.Time(duration).toSeconds();
-
         }
+
+        // Update the DOM with the current measure and beat.
+        dom(time, event);
+
       }, `${measureCounter}m`);
 
       measureCounter++;
     }
     Tone.Transport.start();
+    Tone.Transport.context.resume();
   }
 }
 
