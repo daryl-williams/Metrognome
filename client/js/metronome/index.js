@@ -31,10 +31,8 @@ import { tomtom }   from './synths/tomtom.js';
 import { steelpan } from './synths/steelpan.js';
 
 import { player } from './player/simple-player.js';
-import { play } from './play.js';
 import { start } from './start.js';
 import { stop } from './stop.js';
-import { applyEventUpdates } from './apply-event-updates.js';
 
 class Metronome {
   gain;
@@ -72,11 +70,10 @@ class Metronome {
 
   constructor() {
     this.buffer = {};
-    this.play = play;
     this.player = player;
     this.start = start;
     this.stop = stop;
-    this.applyEventUpdates = applyEventUpdates;
+    this.applyEventUpdates = player.applyEventUpdates;
     //console.log('metronome:/client/js/metronome/index.js:Metrognome:constructor(): this =', this);
   }
 }
