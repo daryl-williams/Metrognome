@@ -33,12 +33,6 @@ export function makeGrid(sequence) {
 
     let song_grid = document.getElementById('metronome-measures-grid');
 
-//    let number_of_measures = sequence.length;
-//    console.log('metronome:/client/js/metronome/makegrid.js: number_of_measures =', number_of_measures);
-
-//    let time_signature = metronome.sequence.timeSignature;
-//    console.log('metronome:/client/js/metronome/makegrid.js: time_signature =', time_signature);
-
     for (let measure_ndx=0; measure_ndx<metronome.sequence.numberOfMeasures; measure_ndx++) {
       //console.log('metronome:/client/js/metronome/makegrid.js: sequence['+measure_ndx+'] =', sequence[measure_ndx]);
 
@@ -91,12 +85,36 @@ export function makeGrid(sequence) {
         else if (metronome.sequence.timeSignature == '4/4') {
           beat_div.classList.add('beat-common-time');
         }
-//if (beat === 1) {
-//  beat_div.classList.remove('beat-3qt-time');
-//  beat_div.classList.add('beat-3qt1-time');
-//}
-
         measure_container.appendChild(beat_div);
+      }
+
+      let voice_div = document.createElement('div');
+      //let id = 'measure-' + measure_number + '--note-' + note;
+      //voice_div.id = id;
+      voice_div.className = 'voice';
+      measure_container.appendChild(voice_div);
+
+      const notes = sequence[measure_ndx].split(' ');;
+
+      for (let ndx=0; ndx<notes.length; ndx++) {
+        //console.log('metronome:/client/js/metronome/makegrid.js: notes['+ndx+'] =', notes[ndx]);
+        const chunk = notes[ndx].split('/');
+        let note = chunk[0];
+        let duration = chunk[1];
+        console.log('metronome:/client/js/metronome/makegrid.js: note =', note);
+        console.log('metronome:/client/js/metronome/makegrid.js: duration =', duration);
+
+        let note_div = document.createElement('span');
+        let id = 'measure-' + measure_number + '-note-' + note;
+        note_div.id = id;
+        note_div.className = 'voice measure' + measure_number + '-note-' + note;
+        if (note === 'rest') {
+          note_div.innerHTML = '_';;
+        }
+        else {
+          note_div.innerHTML = note;
+        }
+        voice_div.appendChild(note_div);
       }
     }
     song_grid = null;

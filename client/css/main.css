@@ -20,7 +20,7 @@ html, body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: auto;
   user-select: none;
 }
 
@@ -66,12 +66,13 @@ label {
 
 #metronome-measures-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1in);
+  grid-template-columns: repeat(6, 2in);
   grid-gap: 5px;
   justify-content: center;
 }
 
 .measure {
+  height: 140px;
   border: thin solid #ccc;
 }
 
@@ -80,7 +81,7 @@ label {
 }
 
 .measure-double-time {
-  background-color:pink;
+  background-color: #d3e3fe;
 }
 .measure-3qt-time {
 }
@@ -132,5 +133,11 @@ label {
 }
 .beat-3qt1-time {
   width: 34%;
+}
+
+.voice {
+  text-align: center;
+  font-size: 8pt;
+  margin .2px;
 }
 
