@@ -66,10 +66,15 @@ class SimplePlayer {
           // after the previous notes in the measure have been played (hence the relativeTime)
           if (note.type === 'note') {
             synth.triggerAttackRelease(note.name, note.duration, time + relativeTime);
+
+            dom(time, event);
           }
 
           // This is used to delay notes that come next by the correct amount
           relativeTime += Tone.Time(duration).toSeconds();
+
+          // Update the DOM with the current measure and beat.
+          dom(time, event);
         }
 
         // Update the DOM with the current measure and beat.
