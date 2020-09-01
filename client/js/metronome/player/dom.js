@@ -13,12 +13,11 @@ export function dom (time, event) {
 
   Tone.Draw.schedule(() => {
     // Do drawing or DOM manipulation here...
-    console.log('metronome:/client/js/metronome/play.js:dom(): CURRENT_MEASURE =', metronome.current_measure);
 
   // Remove previous highlighted measure.
   let last_measure_number = parseInt(event.measureNumber, 10) - 1;
   let last_measure_id = 'measure-' + last_measure_number;
-  console.log('metronome:/client/js/metronome/play.js:dom(): last_measure_id =', last_measure_id);
+  //console.log('metronome:/client/js/metronome/play.js:dom(): last_measure_id =', last_measure_id);
 
   if (event.measureNumber > 1 && document.getElementById(last_measure_id) !== null) {
     metronome.sequence.lastMeasure = document.getElementById(last_measure_id);
@@ -27,7 +26,7 @@ export function dom (time, event) {
 
   // Highlight the current measure.
   let current_measure_id = 'measure-' + event.measureNumber;
-  console.log('metronome:/client/js/metronome/play.js:dom(): current_measure_id =', current_measure_id);
+  //console.log('metronome:/client/js/metronome/play.js:dom(): current_measure_id =', current_measure_id);
   if (document.getElementById(current_measure_id) !== null) {
     metronome.sequence.currentMeasure = document.getElementById(current_measure_id);
     metronome.sequence.currentMeasure.classList.add('current-measure');
