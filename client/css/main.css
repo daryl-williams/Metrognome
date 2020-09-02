@@ -72,7 +72,8 @@ label {
 }
 
 .measure {
-  height: 140px;
+  /*height: 140px;
+   */
   border: thin solid #ccc;
 }
 
@@ -135,9 +136,13 @@ label {
   width: 34%;
 }
 
-.voice {
+.voice-div {
+  color: blue;
+  font-size: 10pt;
   text-align: center;
-  font-size: 8pt;
-  margin .2px;
+}
+
+.voice {
+  padding .5em !important;
 }
 

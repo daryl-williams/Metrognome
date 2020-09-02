@@ -91,7 +91,7 @@ export function makeGrid(sequence) {
       let voice_div = document.createElement('div');
       //let id = 'measure-' + measure_number + '--note-' + note;
       //voice_div.id = id;
-      voice_div.className = 'voice';
+      voice_div.className = 'voice-div';
       measure_container.appendChild(voice_div);
 
       const notes = sequence[measure_ndx].split(' ');;
@@ -101,8 +101,8 @@ export function makeGrid(sequence) {
         const chunk = notes[ndx].split('/');
         let note = chunk[0];
         let duration = chunk[1];
-        console.log('metronome:/client/js/metronome/makegrid.js: note =', note);
-        console.log('metronome:/client/js/metronome/makegrid.js: duration =', duration);
+        //console.log('metronome:/client/js/metronome/makegrid.js: note =', note);
+        //console.log('metronome:/client/js/metronome/makegrid.js: duration =', duration);
 
         let note_div = document.createElement('span');
         let id = 'measure-' + measure_number + '-note-' + note;

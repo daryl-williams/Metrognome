@@ -40,11 +40,13 @@ class SimplePlayer {
     Tone.Transport.cancel();
 
     for (const event of track) {
+//console.log('metronome:/client/js/metronome/player/simple-player.js: event =', event);
       // The first event is always supposed to have new tempo and time signature info
       // so we should update the Transport appropriately
       if (firstEvent) {
         this.applyEventUpdates(event, false);
         firstEvent = false;
+        event.beatNumber = 0;
       }
 
       // In the following callback, "time" represents the absolute time in seconds
@@ -58,6 +60,27 @@ class SimplePlayer {
         // start of the current measure, in seconds
         let relativeTime = 0;
 
+/*
+console.log('metronome:/client/js/metronome/player/simple-player.js: BEAT_NUMBER =', event.beatNumber);
+if (event.beatNumber === 0) {
+  console.log('metronome:/client/js/metronome/player/simple-player.js: BEAT_NUMBER =', event.beatNumber);
+  let duration = event.measure.notes[0].duration;
+  let note_type = parseInt(duration.substring(0, duration.length-1), 10);
+}
+
+let beat_type = 0;
+
+  if (note_type === 4) {
+    beat_type = 1;
+  }
+  else if (note_type === 8) {
+    beat_type = .5;
+  }
+  else if (note_type === 16) {
+    beat_type = .25;
+  }
+*/
+
         for (const note of event.measure.notes) {
           const duration = note.duration;
 
@@ -67,11 +90,23 @@ class SimplePlayer {
           if (note.type === 'note') {
             synth.triggerAttackRelease(note.name, note.duration, time + relativeTime);
 
+            // Update the DOM with the current measure and beat.
             dom(time, event);
           }
 
           // This is used to delay notes that come next by the correct amount
           relativeTime += Tone.Time(duration).toSeconds();
+
+// Determine the current beat.
+//if (event.beatNumber>=3) {
+//  event.beatNumber = 1;
+//}
+//else {
+//  event.beatNumber++;
+//}
+//console.log('metronome:/client/js/metronome/player/simple-player.js: event.beatNumber =', event.beatNumber);
+//event.beatNumber++;
+
 
           // Update the DOM with the current measure and beat.
           dom(time, event);
