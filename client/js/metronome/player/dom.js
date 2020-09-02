@@ -14,6 +14,10 @@ export function dom (time, event) {
   Tone.Draw.schedule(() => {
     // Do drawing or DOM manipulation here...
 
+//if (event.beatNumber) {
+//console.log('metronome:/client/js/metronome/makegrid.js: EVENT.BEATNUMBER =', event.beatNumber);
+//}
+
   // Remove previous highlighted measure.
   let last_measure_number = parseInt(event.measureNumber, 10) - 1;
   let last_measure_id = 'measure-' + last_measure_number;
@@ -26,7 +30,8 @@ export function dom (time, event) {
 
   // Highlight the current measure.
   let current_measure_id = 'measure-' + event.measureNumber;
-  //console.log('metronome:/client/js/metronome/play.js:dom(): current_measure_id =', current_measure_id);
+  console.log('metronome:/client/js/metronome/play.js:dom(): current_measure_id =', current_measure_id);
+
   if (document.getElementById(current_measure_id) !== null) {
     metronome.sequence.currentMeasure = document.getElementById(current_measure_id);
     metronome.sequence.currentMeasure.classList.add('current-measure');
@@ -36,6 +41,13 @@ export function dom (time, event) {
     if (document.getElementById('metronome-startstop-button') !== null) {
       document.getElementById('metronome-startstop-button').innerHTML = 'Start';
     }
+  }
+
+  let current_beat_id = 'measure-' + event.measureNumber + '-beat' + event.beatNumber;
+  if (document.getElementById(current_beat_id) !== null) {
+    let current_beat = document.getElementById(current_beat_id);
+    console.log('metronome:/client/js/metronome/play.js:dom(): CURRENT_BEAT =', current_beat);
+    current_beat.style.backgroundColor = 'pink';
   }
 
   }, time);
