@@ -46,7 +46,7 @@ class SimplePlayer {
       if (firstEvent) {
         this.applyEventUpdates(event, false);
         firstEvent = false;
-        event.beatNumber = 0;
+        event.beatNumber = 1;
       }
 
       // In the following callback, "time" represents the absolute time in seconds

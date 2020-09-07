@@ -109,12 +109,12 @@ export function makeGrid(sequence) {
         note_div.id = id;
         note_div.className = 'voice measure' + measure_number + '-note-' + note;
         if (note === 'rest') {
-          note_div.innerHTML = '_';;
+          note_div.innerHTML = '_';
         }
         else {
           note_div.innerHTML = note;
         }
-        voice_div.appendChild(note_div);
+//        voice_div.appendChild(note_div);
       }
     }
     song_grid = null;

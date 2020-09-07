@@ -21,6 +21,7 @@
 
 'use strict';
 
+import { jsnify } from "../metronome/jsnify.js";
 import { metronome } from "../metronome/index.js";
 
 export function formHandler(event) {
@@ -74,7 +75,7 @@ export function formHandler(event) {
       if (document.getElementById('sequence-array') !== null) {
         // We'll build a series of measure and beats based on the value of the sequence-array textarea.
         let beat_values = [];
-        sequence_value = document.getElementById('sequence-array').value.split('\n');
+        sequence_value = document.getElementById('sequence-array').value.trim().split('\n');
 
         for (let m=0; m<sequence_value.length-1; m++) {
          // console.log('\nmetronome:/client/js/events/form-handler.js: MEASURE #', m+1);
@@ -124,6 +125,10 @@ export function formHandler(event) {
 
       metronome.sequence.value = sequence_value;
       metronome.sequence.numberOfMeasures = sequence_value.length - 1;
+
+      let jsn = jsnify(sequence_value);
+      console.log('metronome:/client/js/events/form-handler.js: JSN =', jsn);
+      metronome.sequence.jsn = jsn;
 
       metronome.makeGrid(sequence_value);
 

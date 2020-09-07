@@ -1,4 +1,6 @@
 /**
+ * ./client/js/metronome/player/sequence-player.js
+ *
  * The code below comes from an online article by Nicolò Andronio
  * titled "Easily play a song track in JavaScript using Tone.js Transport"
  * and is avaiable at:
@@ -7,6 +9,8 @@
  *
  * The code snippets from that article are published under the MIT License.
  */
+
+'use strict';
 
 class SequenceParser {
     constructor (tempoBpm, timeSignatureArray) {
