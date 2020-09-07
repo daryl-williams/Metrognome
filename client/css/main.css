@@ -66,7 +66,7 @@ label {
 
 #metronome-measures-grid {
   display: grid;
-  grid-template-columns: repeat(6, 2in);
+  grid-template-columns: repeat(4, 2in);
   grid-gap: 5px;
   justify-content: center;
 }
@@ -78,7 +78,7 @@ label {
 }
 
 .current-measure {
-  border: thin solid green;
+  border: medium solid green;
 }
 
 .measure-double-time {
@@ -92,6 +92,7 @@ label {
 
 
 .beat {
+  font-size: 10pt;
   display: inline-block;
   text-align: center;
   width:  25%;
@@ -102,7 +103,11 @@ label {
 }
 
 .current-beat {
+/*
   background-color: #d3e3fe;
+  background-color: pink;
+  border: thin solid pink;
+*/
 }
 
 .beat-1 {
